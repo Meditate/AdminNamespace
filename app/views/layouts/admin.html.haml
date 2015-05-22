@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title Site
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  %body
+    .col-lg-2
+      %ul
+        %li=link_to 'Articles', root_path
+        %li=link_to 'Articles', root_path
+        %li=link_to 'Articles', root_path
+        %li=link_to 'Articles', root_path
+        %li=link_to 'Articles', root_path
+    .col-lg-8
+      =yield
