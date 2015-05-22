@@ -3,3 +3,7 @@
   %p=@post.title
   %p=@post.image
   %p=@post.content
+  =@post.get_upvotes.size
+  %p=link_to 'like', like_post_path(@post), method: :get
+  =@post.get_downvotes.size
+  %p=link_to 'dislike', dislike_post_path(@post), metod: :get
