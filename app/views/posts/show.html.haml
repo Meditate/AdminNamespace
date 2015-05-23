@@ -1,9 +1,11 @@
 .col-lg-2
 .col-lg-8
   %p=@post.title
-  %p=@post.image
+  %p=image_tag @post.image,size:'300'
   %p=@post.content
   =@post.get_upvotes.size
-  %p=link_to 'like', like_post_path(@post), method: :get
+  -if user_signed_in?
+    %p=link_to 'like', like_post_path(@post), method: :get
   =@post.get_downvotes.size
-  %p=link_to 'dislike', dislike_post_path(@post), metod: :get
+  -if user_signed_in?
+    %p=link_to 'dislike', dislike_post_path(@post), metod: :get

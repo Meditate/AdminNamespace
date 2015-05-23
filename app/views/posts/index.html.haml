@@ -1,5 +1,5 @@
 -@posts.each do |post|
   %p=post.title
-  %p=post.image
+  %p=image_tag post.image,size:'300'
   %p=link_to'show', post
   %hr
