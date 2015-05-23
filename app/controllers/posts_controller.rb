@@ -5,7 +5,7 @@ before_action :find_posts, only: [:show, :update, :edit, :destroy, :upvote, :dow
   end
 
   def show
-
+    @comments=Comment.where(post_id: @post)
   end
 
   def upvote

@@ -8,11 +8,14 @@ Rails.application.routes.draw do
       get "like", to: "posts#upvote"
       get "dislike", to: "posts#downvote"
     end
+    resources :comments
   end
 
   namespace :admin do
 
-    resources :posts
+    resources :posts do
+      resources :comments
+    end
     root 'home#index'
 
   end

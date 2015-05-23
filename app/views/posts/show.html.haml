@@ -9,3 +9,11 @@
   =@post.get_downvotes.size
   -if user_signed_in?
     %p=link_to 'dislike', dislike_post_path(@post), metod: :get
+  %hr
+  -@comments.each do |comment|
+    .comment-content
+      %p=comment.content
+    .comment-email
+      %p=comment.user.email
+    %hr
+  =render'comments/form'

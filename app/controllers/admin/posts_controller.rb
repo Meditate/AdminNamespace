@@ -18,7 +18,7 @@ before_action :find_posts, only: [:show, :update, :edit, :destroy]
   end
 
   def show
-
+    @comments=Comment.where(post_id: [:admin, @post])
   end
 
   def edit

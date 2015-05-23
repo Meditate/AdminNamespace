@@ -3,4 +3,15 @@
   %p=@post.title
   %p=image_tag @post.image, size:'300'
   %p=@post.content
+  %hr
+  -@comments.each do |comment|
+    .comment-content
+      %p=comment.content
+    .comment-email
+      %p=comment.user.email
+    =link_to 'Delete', [:admin,@post,comment], method: :delete
+    %hr
+
+  =render'comments/form'
+
 
